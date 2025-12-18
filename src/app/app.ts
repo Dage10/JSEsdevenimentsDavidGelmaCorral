@@ -1,4 +1,4 @@
-import {Component, OnInit, signal} from '@angular/core';
+import {Component, HostListener, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,10 +10,22 @@ import { RouterOutlet } from '@angular/router';
 export class App implements OnInit{
   protected readonly title = signal('JSEsdevenimentsDavidGelmaCorral');
 
+  teclaActual = ''
   ngOnInit(){
     document.body.style.backgroundColor = 'green'
   }
   canviarColor(nouColor:string){
     document.body.style.backgroundColor = nouColor
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  mostraTecla(event: KeyboardEvent){
+    this.teclaActual = event.key.toUpperCase()
+  }
+
+
+  @HostListener('window:keyup')
+  amagaTecla(){
+    this.teclaActual = ''
   }
 }
