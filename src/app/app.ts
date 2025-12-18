@@ -11,6 +11,7 @@ export class App implements OnInit{
   protected readonly title = signal('JSEsdevenimentsDavidGelmaCorral');
 
   cadena = ''
+  comptador = 0
   ngOnInit(){
     document.body.style.backgroundColor = 'green'
   }
@@ -22,4 +23,14 @@ export class App implements OnInit{
   acumularTeclas(event: KeyboardEvent){
     this.cadena += event.key.toUpperCase()
   }
+
+  incrementarComptador(){
+    this.comptador++
+  }
+
+  reiniciarComptador(){
+    this.comptador = 0
+  }
+
+
 }
