@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 export class App implements OnInit{
   protected readonly title = signal('JSEsdevenimentsDavidGelmaCorral');
 
-  teclaActual = ''
+  cadena = ''
   ngOnInit(){
     document.body.style.backgroundColor = 'green'
   }
@@ -19,13 +19,7 @@ export class App implements OnInit{
   }
 
   @HostListener('window:keydown', ['$event'])
-  mostraTecla(event: KeyboardEvent){
-    this.teclaActual = event.key.toUpperCase()
-  }
-
-
-  @HostListener('window:keyup')
-  amagaTecla(){
-    this.teclaActual = ''
+  acumularTeclas(event: KeyboardEvent){
+    this.cadena += event.key.toUpperCase()
   }
 }
