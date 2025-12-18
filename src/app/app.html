@@ -349,3 +349,13 @@
 <div *ngIf="cadena === 'QWERTY'">
   <iframe src="https://www.youtube.com/embed/RCA3EfKUJMw?si=ZhDG-oyWRqF8oF_Y"></iframe>
 </div>
+
+<form (ngSubmit)="enviarFormulari()">
+  <label for="nom">Nom:</label>
+  <input [(ngModel)]="nom" name="nom" type="text">
+
+  <label for="cognoms"></label>
+  <input [(ngModel)]="cognoms" name="cognoms" type="text">
+
+  <button type="submit">Enviar</button>
+</form>

@@ -1,10 +1,11 @@
 import {Component, HostListener, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgIf} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgIf],
+  imports: [RouterOutlet, NgIf, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -13,6 +14,8 @@ export class App implements OnInit{
 
   cadena = ''
   comptador = 0
+  nom = ''
+  cognoms = ''
   ngOnInit(){
     document.body.style.backgroundColor = 'green'
   }
@@ -33,5 +36,7 @@ export class App implements OnInit{
     this.comptador = 0
   }
 
-
+  enviarFormulari(){
+    console.log(this.nom+""+this.cognoms)
+  }
 }
