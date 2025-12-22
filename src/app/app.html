@@ -359,3 +359,14 @@
 
   <button type="submit">Enviar</button>
 </form>
+<mat-form-field>
+  <mat-label>Eligeix una data:</mat-label>
+  <input id="inputData" matInput [matDatepicker]="picker"
+         [ngModel]="data" (ngModelChange)="cambiarColorInput()">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-spinner id="spinner" mode="indeterminate" diameter="80" color="{{spinnerColor}}" (dblclick)="canviarSpinnerColor()"></mat-spinner>
+
