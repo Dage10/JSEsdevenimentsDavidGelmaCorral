@@ -370,3 +370,15 @@
 
 <mat-spinner id="spinner" mode="indeterminate" diameter="80" color="{{spinnerColor}}" (dblclick)="canviarSpinnerColor()"></mat-spinner>
 
+<div>
+  <h2>Calculadora</h2>
+  <button (click)="Sumar()" (mouseenter)="mostrarOperacio('Suma')" (mouseleave)="operacio='' ">Sumar</button>
+  <button (click)="Restar()" (mouseenter)="mostrarOperacio('Resta')" (mouseleave)="operacio='' ">Restar</button>
+  <button (click)="Multiplicar()" (mouseenter)="mostrarOperacio('Multiplicar')" (mouseleave)="operacio='' ">Multiplicar</button>
+  <button (click)="Dividir()" (mouseenter)="mostrarOperacio('Dividir')" (mouseleave)="operacio='' ">Dividir</button>
+  <p *ngIf="operacio">Operacio: {{operacio}}</p>
+  <input [(ngModel)]="numero1" type="number" name="numero1">
+  <input [(ngModel)]="numero2" type="number" name="numero2">
+  <p>Resultat: {{resultat}}</p>
+</div>
+

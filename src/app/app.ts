@@ -26,6 +26,10 @@ export class App implements OnInit{
   data = ''
   comptador_data = 0
   spinnerColor: 'primary' | 'accent' | 'warn' = 'warn';
+  numero1 = 0
+  numero2 = 0
+  operacio = ''
+  resultat = 0
   ngOnInit(){
     document.body.style.backgroundColor = 'green'
   }
@@ -60,5 +64,34 @@ export class App implements OnInit{
 
   canviarSpinnerColor(){
     this.spinnerColor = 'accent';
+  }
+
+  Sumar(){
+    this.operacio = 'Suma'
+    this.resultat = this.numero1 + this.numero2
+  }
+
+  Restar(){
+    this.operacio = 'Restar'
+    this.resultat = this.numero1 - this.numero2
+  }
+
+  Multiplicar(){
+    this.operacio = "Multiplicar"
+    this.resultat = this.numero1 * this.numero2
+  }
+
+  Dividir(){
+    this.operacio = 'Dividir'
+    if(this.numero2 !== 0){
+      this.resultat = this.numero1 / this.numero2
+    }
+    else{
+      this.resultat = 0
+    }
+  }
+
+  mostrarOperacio(operacio:string){
+    this.operacio = operacio;
   }
 }
